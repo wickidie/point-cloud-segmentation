@@ -1,0 +1,45 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "point_cloud_segmentation"
+version = "0.0.1"
+description = "A short description of the project."
+authors = [
+  { name = "Marvin Adinata" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+dependencies = [
+    "laspy[lazrs]>=2.7.0",
+    "lazrs>=0.8.1",
+    "loguru",
+    "mkdocs",
+    "open3d>=0.19.0",
+    "pip",
+    "pytest",
+    "python-dotenv",
+    "ruff",
+    "tqdm",
+    "typer",
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["point_cloud_segmentation"]
+include = ["pyproject.toml", "point_cloud_segmentation/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["point_cloud_segmentation"]
+force-sort-within-sections = true
+
